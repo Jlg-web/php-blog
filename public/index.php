@@ -28,7 +28,13 @@ new Router(
             '/dashboard'    => [PageBack::class, 'listeArticles'],
             '/add_article'  => [PageBack::class, 'ajouterArticle'],
             'R>/edit-(\d+)' => [PageBack::class, 'modifierArticle'],
-            'R>/supp-(\d+)' => [PageBack::class, 'supprimerArticle']
+            'R>/supp-(\d+)' => [PageBack::class, 'supprimerArticle'],
+
+            //Gérer les commentaires
+            '/add_commentaire'  => [PageBack::class, 'ajouterCommentaire'],
+            'R>/supp-(\d+)' => [PageBack::class, 'supprimerCommentaire']
+
+
         ]
     ],
     [PageFront::class, 'page_404']

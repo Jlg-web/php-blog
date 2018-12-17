@@ -34,6 +34,13 @@ class Admin extends ControlleurFramework
         self::render('admin/liste_articles.html');
     }
 
+
+    //Ajouter un commentaire
+    
+
+
+
+
     // Ajouter un article
     public static function ajouterArticle() : void
     {

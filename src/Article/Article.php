@@ -91,6 +91,7 @@ class Article
                 contenu = :contenu
             WHERE id = :id'
         );
+        
         $requete = $edit->execute([
             'titre'   => trim($titre),
             'contenu' => trim($contenu),
