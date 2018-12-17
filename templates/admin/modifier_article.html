@@ -1,0 +1,24 @@
+{{ template "base.html" }}
+
+{{ section #contenu }}
+<main class="container border mt-4 p-4">
+    <h1>Modifier un article</h1>
+
+    {{ loop #messages as #msg }}
+        {{ #msg |RAW }}
+    {{ endloop }}
+
+    <form action="edit-{{ #article.id }}" method="post">
+        <div class="form-group">
+            <label>Titre</label>
+            <input type="text" name="titre" class="form-control" value="{{ #article.titre }}">
+        </div>
+        <div class="form-group">
+            <label>Contenu</label>
+            <textarea name="contenu" class="form-control">{{ #article.contenu }}</textarea>
+        </div>
+        <input type="hidden" name="token" value="{{ #token }}">
+        <input type="submit" name="modifier" class="btn btn-primary" value="Modifier">
+    </form>
+</main>
+{{ endsection }}

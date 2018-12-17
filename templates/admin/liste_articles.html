@@ -1,0 +1,36 @@
+{{ template "base.html" }}
+
+{{ section #contenu }}
+<main class="container border mt-4 p-4">
+    <h1>Liste des articles</h1>
+
+    {{ loop #messages as #msg }}
+        {{ #msg |RAW }}
+    {{ endloop }}
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Date</th>
+                <th scope="col">Extrait</th>
+                <th scope="col">Modifier</th>
+                <th scope="col">Supprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{ loop #liste as #article }}
+                <tr>
+                    <th scope="row">{{ #article.id }}</th>
+                    <td>{{ #article.titre }}</td>
+                    <td>{{ #article.date_fr }}</td>
+                    <td>{{ #article.extrait }}</td>
+                    <td><a href="edit-{{ #article.id }}" class="btn btn-primary">Modifier</a></td>
+                    <td><a href="supp-{{ #article.id }}" class="btn btn-danger">Supprimer</a></td>
+                </tr>
+            {{ endloop }}
+        </tbody>
+    </table>
+</main>
+{{ endsection }}

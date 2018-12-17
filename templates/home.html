@@ -1,0 +1,30 @@
+<!-- On veut utiliser le template de base "base.html" -->
+{{ template "base.html" }}
+
+
+<!--
+Le template "base.html" nécessite une zone "contenu"
+Tout ce qui se trouver à l'intérieur sera inséré à la place du
+{{ insert #contenu }}
+-->
+{{ section #contenu }}
+<main class="container border mt-4 p-4">
+    <h1>Bienvenue sur le blog de {{ #prenom }}</h1>
+
+    <!-- On peut faire des boucles de la même manière qu'une boucle foreach en PHP -->
+    <ul class="list-group">
+        {{ loop #liste as #article }}
+        <div class="card mt-4">
+            <div class="card-header">
+                {{ #article.date_fr }}
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ #article.titre }}</h5>
+                <p class="card-text">{{ #article.extrait }}</p>
+                <a href="article-{{ #article.id }}" class="btn btn-primary">Lire</a>
+            </div>
+        </div>
+        {{ endloop }}
+    </ul>
+</main>
+{{ endsection }}

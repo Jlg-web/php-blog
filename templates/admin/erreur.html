@@ -1,0 +1,11 @@
+{{ template "base.html" }}
+
+{{ section #contenu }}
+<main class="container border mt-4 p-4">
+    <h1>Erreur</h1>
+
+    {{ loop #messages as #msg }}
+        {{ #msg |RAW }}
+    {{ endloop }}
+</main>
+{{ endsection }}

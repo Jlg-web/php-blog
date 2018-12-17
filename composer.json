@@ -1,0 +1,22 @@
+{
+    "name": "aymdev/phunder-skeleton",
+    "description": "A predefined architecture to use the Phunder framework",
+    "type": "project",
+    "require": {
+        "aymdev/phunder": "^3.2",
+        "erusev/parsedown": "^1.7"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "aymdev",
+            "email": "aymericmayeux@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    }
+}

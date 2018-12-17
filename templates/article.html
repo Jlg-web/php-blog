@@ -1,0 +1,10 @@
+{{ template "base.html" }}
+
+{{ section #contenu }}
+<main class="container border mt-4 p-4">
+    <h1>{{ #titre }}</h1>
+    <p>{{ #date }}</p>
+    <hr>
+    {{ #contenu |RAW }}
+</main>
+{{ endsection }}
